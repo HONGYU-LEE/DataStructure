@@ -1,0 +1,5 @@
+﻿  BinaryTree.c
+  test.c
+  正在生成代码...
+  C:\Users\Administrator\Desktop\test\data structure\Tree\BinaryTree\BinaryTree\BinaryTree.c(118) : error C4700: 使用了未初始化的局部变量“q”
+G:\VS\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(429,5): error MSB6006: “CL.exe”已退出，代码为 2。
