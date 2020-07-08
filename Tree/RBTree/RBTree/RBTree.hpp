@@ -21,7 +21,6 @@ namespace lee
 	template<class T>
 	struct RBTreeNode
 	{
-		typedef RBTreeNode<T> Node;
 
 		RBTreeNode(const T& data = T(), const Color& color = RED) 
 			: _left(nullptr)
@@ -174,7 +173,6 @@ namespace lee
 	template<class K, class T, class KOfV>
 	class RBTree
 	{
-
 	public:
 		typedef RBTreeNode<T> Node;
 		typedef __RBTreeIterator<T, T*, T&> iterator;
@@ -532,9 +530,9 @@ namespace lee
 		/*
 			判断是否为红黑树，就是判断其是否满足红黑树的特性
 
-			特性：	3.根节点必须为黑节点
-					1.不存在连续的红结点
-				    2.从某一节点出发到其所有的叶子节点，其中经过的黑色节点数量相等
+			特性：	1.根节点必须为黑节点
+					2.不存在连续的红结点
+				    3.从某一节点出发到其所有的叶子节点，其中经过的黑色节点数量相等
 				  
 		*/
 		bool IsRBTree()
