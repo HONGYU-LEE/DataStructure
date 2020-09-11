@@ -1,2 +1,0 @@
-﻿  test.cpp
-C:\Users\Administrator\Desktop\test\DataStructure\Hash\HashBucket\HashBucket\test.cpp(48,1): error C2906:  “std::_Hash<std::string>”: 显式专用化需要“template <>”

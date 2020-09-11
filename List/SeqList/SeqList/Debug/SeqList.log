@@ -1,5 +1,0 @@
-﻿  SeqList.c
-  test.c
-  正在生成代码...
-C:\Users\Administrator\Desktop\code\github\test\data structure\List\SeqList\SeqList\SeqList.c(144,30): warning C4018: “>”: 有符号/无符号不匹配
-  SeqList.vcxproj -> C:\Users\Administrator\Desktop\code\github\test\data structure\List\SeqList\Debug\SeqList.exe
