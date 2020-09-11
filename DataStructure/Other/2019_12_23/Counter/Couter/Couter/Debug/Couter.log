@@ -1,0 +1,6 @@
+﻿  couter.c
+  test.c
+  正在生成代码...
+C:\Users\Administrator\Desktop\code\github\test\data structure\2019_12_23\Counter\Couter\Couter\couter.c(63): warning C4715: “Isop”: 不是所有的控件路径都返回值
+C:\Users\Administrator\Desktop\code\github\test\data structure\2019_12_23\Counter\Couter\Couter\couter.c(72): warning C4715: “Inop”: 不是所有的控件路径都返回值
+  Couter.vcxproj -> C:\Users\Administrator\Desktop\code\github\test\data structure\2019_12_23\Counter\Couter\Debug\Couter.exe

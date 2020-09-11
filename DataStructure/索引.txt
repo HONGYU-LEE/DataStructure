@@ -1,0 +1,25 @@
+2019_10_7
+1.判断字符串是否为回文（顺序栈）
+
+2019_10_9
+1.单链表逆转 
+2.求链式表的表长
+3.尾插法创建单链表
+
+2019_10_20
+1.
+链栈的入栈出栈
+Status Push(LinkList L,ElemType e);
+Status Pop(LinkList L,ElemType *e);
+2.
+void InitQueue(SqQueue *&q);   //初始化队列；
+void DestroyQueue(SqQueue *&q);  //销毁队列；
+bool QueueEmpty(SqQueue *q);  //判定队列为空时返回true; 否则返回false;
+bool enQueue(SqQueue *&q,ElemType *e);  // e 入队；成功入队返回true; 否则返回false;
+bool deQueue(SqQueue *&q,ElemType *&e);  //出队，返回出队元素e，且成功出队返回true,否则返回false;
+
+2019_12_11
+1.输入一个链表，输出该链表中倒数第k个结点。
+
+2019_12_12
+1.链表分割：以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前
