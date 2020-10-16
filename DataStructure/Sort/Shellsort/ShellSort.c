@@ -18,7 +18,7 @@ void ShellSort(int* arr, int n)
 	do
 	{
 		gap = gap / 3 + 1;
-		//ÉèÖÃÔöÁ¿ 
+		//è®¾ç½®å¢é‡ 
 		for (i = gap; i < n; i++)
 		{
 			if (arr[i] < arr[i - gap])
@@ -43,7 +43,7 @@ void ShellSort(int* arr, int n)
 	while(gap > 1)
 	{
 		gap = gap / 3 + 1;
-				printf("µ±Ç°gap£º%d\n", gap); 
+				printf("å½“å‰gapï¼š%d\n", gap); 
 		for(i = 0; i < n - gap; ++i)
 		{
 			int end = i;
