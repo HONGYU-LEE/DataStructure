@@ -16,11 +16,11 @@ size_t getIndex(const string& str, int index)
     return str[index];
 }
 
-void RadixSort(vector<string>& arr)
+void RadixSort(vector<string>& arr, int maxLen)
 {
     vector<string> temp(arr);    //临时数组，用来保留每一趟的结果
 
-    for(int i = arr.size() - 1; i >= 0; i--)
+    for(int i = maxLen - 1; i >= 0; i--)
     {
         vector<int> count(128, 0);  //统计数组
 
@@ -55,7 +55,7 @@ int main()
 {
 	vector<string> arr = { "hello", "world", "hellp", "hill", "ha", "path", "class", "alter" };
 
-	RadixSort(arr);
+	RadixSort(arr, 5);
 	
     for(auto& str : arr)
     {
