@@ -13,12 +13,12 @@ int main()
 	trie.insert("world");
 	trie.insert("test");
 	trie.insert("cpp");
-	trie.insert("ÎÒ");
-	trie.insert("ÎÒ°®Ñ§Ï°");
-	trie.insert("ÎÒ°®C++");
-	trie.insert("Äã");
+	trie.insert("æˆ‘");
+	trie.insert("æˆ‘çˆ±å­¦ä¹ ");
+	trie.insert("æˆ‘çˆ±C++");
+	trie.insert("ä½ ");
 
-	for (auto str : trie.getPrefixWords("ÎÒ"))
+	for (auto str : trie.getPrefixWords("æˆ‘"))
 	{
 		cout << str << endl;
 	}
@@ -26,8 +26,8 @@ int main()
 	{
 		cout << str << endl;
 	}
-	cout << trie.find("ÎÒ") << endl;
-	cout << trie.find("Ëü") << endl;
+	cout << trie.find("æˆ‘") << endl;
+	cout << trie.find("å®ƒ") << endl;
 	cout << trie.find("cpp") << endl;
 	cout << trie.find("java") << endl;
 	cout << trie.startsWith("h") << endl;

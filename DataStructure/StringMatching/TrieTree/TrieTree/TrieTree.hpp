@@ -16,9 +16,9 @@ namespace lee
 			, _isEnd(false)
 		{}
 
-		char _data;		//µ±Ç°×Ö·û
-		bool _isEnd;	//±ê¼Çµ±Ç°ÊÇ·ñÄÜ¹¹³ÉÒ»¸öµ¥´Ê
-		unordered_map<char, TrieNode*> _subNode;	//×Ó½Úµã
+		char _data;		//å½“å‰å­—ç¬¦
+		bool _isEnd;	//æ ‡è®°å½“å‰æ˜¯å¦èƒ½æ„æˆä¸€ä¸ªå•è¯
+		unordered_map<char, TrieNode*> _subNode;	//å­èŠ‚ç‚¹
 	};
 
 	class TrieTree
@@ -33,11 +33,11 @@ namespace lee
 			delete _root;
 		}
 
-		//·À¿½±´
+		//é˜²æ‹·è´
 		TrieTree(const TrieTree&) = delete;
 		TrieTree& operator=(const TrieTree&) = delete;
 
-		//²åÈë×Ö·û´®
+		//æ’å…¥å­—ç¬¦ä¸²
 		void insert(const string& str)
 		{
 			if (str.empty())
@@ -48,18 +48,18 @@ namespace lee
 			TrieNode* cur = _root;
 			for (size_t i = 0; i < str.size(); i++)
 			{
-				//Èç¹ûÕÒ²»µ½¸Ã×Ö·û£¬ÔòÔÚ¶ÔÓ¦²ãÖĞ²åÈë
+				//å¦‚æœæ‰¾ä¸åˆ°è¯¥å­—ç¬¦ï¼Œåˆ™åœ¨å¯¹åº”å±‚ä¸­æ’å…¥
 				if (cur->_subNode.find(str[i]) == cur->_subNode.end())
 				{
 					cur->_subNode.insert(make_pair(str[i], new TrieNode(str[i])));
 				}
 				cur = cur->_subNode[str[i]];
 			}
-			//±ê¼Ç¸Ãµ¥´Ê´æÔÚ
+			//æ ‡è®°è¯¥å•è¯å­˜åœ¨
 			cur->_isEnd = true;
 		}
 
-		//²éÕÒ×Ö·û´®
+		//æŸ¥æ‰¾å­—ç¬¦ä¸²
 		bool find(const string& str)
 		{
 			if (str.empty())
@@ -76,11 +76,11 @@ namespace lee
 				}
 				cur = cur->_subNode[str[i]];
 			}
-			//Èç¹ûµ±Ç°Æ¥Åäµ½µÄÊÇÒ»¸öÇ°×º¶ø·ÇÒ»¸öÍêÕûµÄµ¥´Ê£¬Ôò·µ»Ø´íÎó
+			//å¦‚æœå½“å‰åŒ¹é…åˆ°çš„æ˜¯ä¸€ä¸ªå‰ç¼€è€Œéä¸€ä¸ªå®Œæ•´çš„å•è¯ï¼Œåˆ™è¿”å›é”™è¯¯
 			return cur->_isEnd == true ? true : false;
 		}
 
-		//²éÕÒÊÇ·ñ´æÔÚÒÔ°üº¬strÎªÇ°×ºµÄ×Ö·û´®
+		//æŸ¥æ‰¾æ˜¯å¦å­˜åœ¨ä»¥åŒ…å«strä¸ºå‰ç¼€çš„å­—ç¬¦ä¸²
 		bool startsWith(const string& str)
 		{
 			if (str.empty())
@@ -100,7 +100,7 @@ namespace lee
 			return true;
 		}
 
-		//·µ»ØËùÓĞÒÔstrÎªÇ°×ºµÄ×Ö·û´®
+		//è¿”å›æ‰€æœ‰ä»¥strä¸ºå‰ç¼€çš„å­—ç¬¦ä¸²
 		vector<string> getPrefixWords(const string& str)
 		{
 			if (str.empty())
@@ -126,24 +126,24 @@ namespace lee
 		}
 
 	private:
-		//Ê¹ÓÃ»ØËİÀ´ÕÒµ½ËùÓĞ°üº¬¸ÃÇ°×ºµÄ×Ö·û´®
+		//ä½¿ç”¨å›æº¯æ¥æ‰¾åˆ°æ‰€æœ‰åŒ…å«è¯¥å‰ç¼€çš„å­—ç¬¦ä¸²
 		void _getPrefixWords(TrieNode* cur, string& str, vector<string>& res)
 		{
-			//Èç¹ûµ±Ç°ÄÜ¹¹³ÉÒ»¸öµ¥´Ê£¬Ôò¼ÓÈë½á¹û¼¯ÖĞ
+			//å¦‚æœå½“å‰èƒ½æ„æˆä¸€ä¸ªå•è¯ï¼Œåˆ™åŠ å…¥ç»“æœé›†ä¸­
 			if (cur->_isEnd)
 			{
 				res.push_back(str);
 			}
 
-			//Æ¥Åäµ±Ç°ËùÓĞ¿ÉÄÜ×Ö·û
+			//åŒ¹é…å½“å‰æ‰€æœ‰å¯èƒ½å­—ç¬¦
 			for (const auto& sub : cur->_subNode)
 			{
-				str.push_back(sub.first);	//Æ¥Åäµ±Ç°×Ö·û
-				_getPrefixWords(sub.second, str, res);	//Æ¥ÅäÏÂÒ»¸ö×Ö·û
-				str.pop_back();	//»ØËİ£¬³¢ÊÔÆäËû½á¹û
+				str.push_back(sub.first);	//åŒ¹é…å½“å‰å­—ç¬¦
+				_getPrefixWords(sub.second, str, res);	//åŒ¹é…ä¸‹ä¸€ä¸ªå­—ç¬¦
+				str.pop_back();	//å›æº¯ï¼Œå°è¯•å…¶ä»–ç»“æœ
 			}
 		}
 
-		TrieNode* _root;	//¸ù½Úµã£¬´æ´¢¿Õ×Ö·û
+		TrieNode* _root;	//æ ¹èŠ‚ç‚¹ï¼Œå­˜å‚¨ç©ºå­—ç¬¦
 	};
 };
