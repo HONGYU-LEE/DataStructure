@@ -165,13 +165,15 @@ namespace lee
 int main()
 {
     lee::AC ac;
-    ac.insert("abcd");
-    ac.insert("bcd");
-    ac.insert("bc");
-    ac.insert("c");
-
+    ac.insert("ass");
+    ac.insert("fuck");
+    ac.insert("shit");
+    ac.insert("cao");
+    ac.insert("sb");
+    ac.insert("nmsl");
+    ac.insert("dead");
     ac.buildFailurePointer();
 
-    ac.match("abcd");
+    ac.match("fuckyou,nmslsb");
     return 0;
 }
